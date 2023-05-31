@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root
+{
+    --black: #333;
+    --white: #fff;
+    --main-color: #d3ad7f;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+    color: var(--black);
+    text-transform: none;
+}
+
+html
+{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+.profile {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1.5rem 3%;
+}
+
+.profile .container__left {
+    width: 50rem;
+    border-right: 2px solid var(--black);
+    padding: 5rem 3% 10rem 0;
+    margin-top: 10rem;
+}
+
+.profile .container__left .info {
+    text-align: center;
+}
+
+.profile .container__left .info .info__avatar {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+
+.profile .container__left .info .info__avatar img {
+    width: 25%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+.profile .container__left .info .info__name {
+    padding-bottom: 2rem;
+}
+
+.profile .container__left .info .info__name h1 {
+    font-size: 2.3rem;
+}
+
+.profile .container__left .info .info__details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.profile .container__left .info .info__details .credit {
+    font-size: 1.6rem;
+    padding-right: 5rem;
+}
+
+.profile .container__left .info .info__details .watched {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+}
+
+.profile .container__left .info .info__details .watched i {
+    font-size: 1.6rem;
+}
+
+.profile .container__left .info .info__details .watched p {
+    font-size: 1.6rem;
+}
+
+.profile .container__left .info .info__title {
+    padding-bottom: 2rem;
+}
+
+.profile .container__left .info .info__title p {
+    font-size: 1.4rem;
+}
+
+.profile .container__left .info .info__btn-edit {
+    margin: 2rem;
+}
+
+.profile .container__left .info .info__btn-edit a {
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    background-color: #3C4835;
+    color: #fff;
+    transition: .2s linear;
+}
+
+.profile .container__left .info .info__btn-edit a:hover {
+    letter-spacing: .1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+.profile .container__left .option {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-auto-flow: dense;
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.profile .container__left .option .option__post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.profile .container__left .option .option__post a i{
+    font-size: 2.5rem;
+    color: #60605F;
+    transition: .2s linear;
+}
+
+.profile .container__left .option .option__post a i:hover {
+    color: #4b4b4b;
+    font-size: 2.7rem;
+}
+
+.profile .container__left .option .option__post p {
+    font-size: 2rem;
+}
+
+.profile .container__left .option .option__share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile .container__left .option .option__share a i {
+    font-size: 2.5rem;
+    color: #60605F;
+    transition: .2s linear;
+}
+
+.profile .container__left .option .option__share a i:hover {
+    color: #4b4b4b;
+    font-size: 2.7rem;
+}
+
+.profile .container__left .option .option__share p {
+    font-size: 2rem;
+}
+
+.profile .container__left .option .option__palette {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 5rem;
+}
+
+.profile .container__left .option .option__palette a i {
+    font-size: 2.5rem;
+    color: #60605F;
+    transition: .2s linear;
+}
+
+.profile .container__left .option .option__palette a i:hover {
+    color: #4b4b4b;
+    font-size: 2.7rem;
+}
+
+.profile .container__left .option .option__palette p {
+    font-size: 2rem;
+}
