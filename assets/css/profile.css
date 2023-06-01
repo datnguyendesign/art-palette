@@ -34,8 +34,6 @@ html
 .profile {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     padding: 1.5rem 3%;
 }
 
@@ -206,4 +204,96 @@ html
 
 .profile .container__left .option .option__palette p {
     font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+.profile .container__right {
+    display: grid;
+    grid-gap: 5rem;
+    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+    grid-auto-rows: 40rem;
+    grid-auto-flow: dense;
+    padding-left: 10rem;
+    padding-top: 10rem;
+}
+
+.profile .container__right .post-item {
+    display: flex;
+    background-color: #d9d9d966;
+    border-radius: 3rem;
+    padding-left: 2rem;
+}
+
+.profile .container__right .post-item .images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+}
+
+.profile .container__right .post-item .images img {
+    width: 40%;
+    height: 30%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.profile .container__right .post-item .content {
+    padding-top: 8rem;
+    padding-left: 2rem;
+}
+
+.profile .container__right .post-item .content .content__title {
+    padding-bottom: 1.5rem;
+}
+
+.profile .container__right .post-item .content .content__title h2 {
+    font-size: 2rem;
+}
+
+.profile .container__right .post-item .content .content__react {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding-bottom: 1.5rem;
+    gap: .5rem;
+}
+
+.profile .container__right .post-item .content .content__react i {
+    font-size: 1.4rem;
+}
+
+.profile .container__right .post-item .content .content__react p {
+    font-size: 1.2rem;
+}
+
+.profile .container__right .post-item .content .content__des {
+    padding-right: 2rem;
+}
+
+.profile .container__right .post-item .content .content__des p {
+    font-size: 1.2rem;
+}
+
+.color-1 {
+    color: #19696F;
+}
+
+.color-2 {
+    color: #BF95B7;
+}
+
+.color-3 {
+    color: #21670D;
 }
