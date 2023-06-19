@@ -137,6 +137,7 @@ html
     grid-auto-flow: dense;
     text-align: center;
     margin-top: 10rem;
+    row-gap: 4rem;
 }
 
 .profile .container__left .option .option__post {
@@ -188,7 +189,6 @@ html
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding-top: 5rem;
 }
 
 .profile .container__left .option .option__palette a i {

@@ -19,7 +19,7 @@
 
 <!-- header -->
 
-<header class="header" style="background: rgba(233, 240, 237, 0.64);">
+<header class="header" style="background: #fff">
 
     <div class="logo">
 
@@ -49,8 +49,20 @@
     <div class="links">
       <a href="gallery.html">Gallery</a>
       <a href="explore.html">Explore</a>
-      <a href="login.html" class="btn--login">Login</a>
-      <a href="signup.html" class="btn--signup">Sign up</a>
+      <div class="user">
+        <div class="dropdown">
+          <div class="menu">
+            <img src="images/img22.jpg" alt="">
+            <span>CloudNight</span>
+          </div>
+
+          <div class="option">
+            <div><a href="homepage_index.html">Home</a></div>
+            <div><a href="profile.html">Profile</a></div>
+            <div><a href="index.html">Sign out</a></div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </header>
@@ -192,6 +204,17 @@
   </section>
 
 <!-- /section footer -->
+
+<script>
+    function show(a) {
+        document.querySelector('.menu').value = a;
+    }
+
+    let dropdown = document.querySelector('.dropdown');
+    dropdown.onclick = function() {
+        dropdown.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>

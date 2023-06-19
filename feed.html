@@ -41,7 +41,7 @@
         </div>
 
         <div class="title">
-          <a href="#color">Art palette</a>
+          <a href="index.html">Art palette</a>
         </div>
 
     </div>
@@ -54,24 +54,71 @@
     <div class="container">
 
       <div class="notice">
-        <a href="#"><i class="fas fa-bell"></i></a>
-    </div>
+        <a href="#" class="bell"><i class="fas fa-bell"></i></a>
+        <div class="notification">
 
-    <div class="user">
+          <header class="noti__header">
+            <h1>Notification</h1>
+          </header>
 
-        <div class="avatar">
+          <ul class="noti__list">
+            <li class="noti__list-item">
+              <a href="#" class="noti__link message">
+                <img src="images/user.png" alt="" class="noti__link-img">
+                <div class="noti__link-content">
+                  <h2>Message</h2>
+                  <p>User has nickname <span>ngtiendat</span> just replied your comment.</p>
+                </div>
+                <div class="noti__link-type">
+                  <i class="fa-solid fa-message"></i>
+                </div>
+              </a>
+            </li>
+
+            <li class="noti__list-item">
+              <a href="#" class="noti__link reaction">
+                <img src="images/user.png" alt="" class="noti__link-img">
+                <div class="noti__link-content">
+                  <h2>Reaction</h2>
+                  <p>User has nickname <span>ngtiendat</span> just liked your post.</p>
+                </div>
+                <div class="noti__link-type">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+              </a>
+            </li>
+
+            <li class="noti__list-item">
+              <a href="#" class="noti__link download">
+                <img src="images/user.png" alt="" class="noti__link-img">
+                <div class="noti__link-content">
+                  <h2>Download</h2>
+                  <p>You have just downloaded the image from <span>abc</span>.</p>
+                </div>
+                <div class="noti__link-type">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="user">
+        <div class="dropdown">
+          <div class="menu">
             <img src="images/img22.jpg" alt="">
-        </div>
+            <span>CloudNight</span>
+          </div>
 
-        <div class="name">
-            <h1>CloudNight</h1>
+          <div class="option">
+            <div><a href="homepage_index.html">Home</a></div>
+            <div><a href="profile.html">Profile</a></div>
+            <div><a href="index.html">Sign out</a></div>
+          </div>
         </div>
-
-        <div class="drop-down">
-          <i class="fa-solid fa-chevron-down"></i>
-        </div>
-
-    </div>
+      </div>
 
     </div>
 
@@ -86,10 +133,62 @@
 
 <!-- Section body -->
 
-<div class="middle">
+<div class="upload-news">
+  <h1>New post</h1>
+  <input type="text" name="title" id="title" placeholder="Title...">
+  <div class="select-title-color">
+    <span id="red-color--bg"></span>
+    <span id="blue-color--bg"></span>
+    <span id="green-color--bg"></span>
+    <span id="yellow-color--bg"></span>
+    <span><i class="fa-solid fa-ellipsis"></i></span>
+  </div>
+  <textarea name="description" id="description" cols="50" rows="3" placeholder="What's on your mind ?" ></textarea>
+  <div class="up-picture">
+    <a href="#"><i class="fa-solid fa-circle-plus"></i></a>
+    <p>Upload photos</p>
+    <span>or videos</span>
+  </div>
+  <a href="#" class="btn-post">Create post</a>
+  <div class="close" onclick="toggle()">
+    <i class="fa-solid fa-xmark"></i>
+  </div>
+</div>
+
+<div class="middle" id="blur">
 
     <!-- Frame left -->
-    <iframe src="feed_left.html" frameborder="0" title="Feed Element left" id="left"></iframe>
+    <section id="left">
+      <div class="upload">
+        <a href="#" id="upload" onclick="toggle()"><i class="fa fa-circle-plus"></i></a>
+        <p>Click here to upload your picture</p>
+      </div>
+
+      <div class="upload-news">
+        <h1>New post</h1>
+        <input type="text" name="title" id="title" placeholder="Title...">
+        <div class="select-title-color">
+          <span id="red-color--bg"></span>
+          <span id="blue-color--bg"></span>
+          <span id="green-color--bg"></span>
+          <span id="yellow-color--bg"></span>
+          <span><i class="fa-solid fa-ellipsis"></i></span>
+        </div>
+        <textarea name="description" id="description" cols="50" rows="3" placeholder="What's on your mind ?" ></textarea>
+        <div class="up-picture">
+          <a href="#"><i class="fa-solid fa-circle-plus"></i></a>
+          <p>Upload photos</p>
+          <span>or videos</span>
+        </div>
+        <a href="#" class="btn-post">Create post</a>
+        <div class="close" onclick="popup()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+
+      <iframe src="feed_left.html" frameborder="0" title="Feed Element left"></iframe>
+    </section>
+
     <!-- /Frame left -->
 
 
@@ -169,7 +268,27 @@
 
 <!-- /Section body -->
 
+<script>
 
+function toggle() {
+  var blur = document.getElementById('blur');
+  blur.classList.toggle('active');
+  var popup = document.querySelector('.upload-news');
+  popup.classList.toggle('active');
+}
+
+</script>
+
+<script>
+  function show(a) {
+      document.querySelector('.menu').value = a;
+  }
+
+  let dropdown = document.querySelector('.dropdown');
+  dropdown.onclick = function() {
+      dropdown.classList.toggle('active');
+  }
+</script>
 
 
 
