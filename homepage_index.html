@@ -45,25 +45,43 @@
 
       </div>
 
+      <div class="logos">
+        <div class="user">
+          <div class="dropdown" id="dropdown-1">
+            <div class="menu" id="popup-1">
+              <img src="images/img22.jpg" alt="">
+              <span>CloudNight</span>
+            </div>
+
+            <div class="option">
+              <div><a href="homepage_index.html">Home</a></div>
+              <div><a href="profile.html">Profile</a></div>
+              <div><a href="index.html">Sign out</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+      </div>
+
       <div class="links">
         <a href="raw_about.html">About</a>
         <a href="explore.html">Explore</a>
         <a href="feed.html">Feed</a>
         <a href="gallery.html">Gallery</a>
         <div class="user">
-            <div class="dropdown">
-              <div class="menu">
-                <img src="images/img22.jpg" alt="">
-                <span>CloudNight</span>
-              </div>
+          <div class="dropdown" id="dropdown-2">
+            <div class="menu" id="popup-2">
+              <img src="images/img22.jpg" alt="">
+              <span>CloudNight</span>
+            </div>
 
-              <div class="option">
-                <div><a href="homepage_index.html">Home</a></div>
-                <div><a href="profile.html">Profile</a></div>
-                <div><a href="index.html">Sign out</a></div>
-              </div>
+            <div class="option">
+              <div><a href="homepage_index.html">Home</a></div>
+              <div><a href="profile.html">Profile</a></div>
+              <div><a href="index.html">Sign out</a></div>
             </div>
           </div>
+        </div>
       </div>
 
     </header>
@@ -284,7 +302,7 @@
                   <img src="images/AstroBank commercial illustrations_ (1).png" alt="">
                 </div>
                 <div class="box">
-                  <img src="images/熊崎 on Twitter.jpg" alt="">
+                  <img src="images/on Twitter.jpg" alt="">
                 </div>
 
               </div>
@@ -327,6 +345,9 @@
                   <p>“Painting is poetry that is seen rather than felt, and poetry is painting that is felt rather than seen.”</p>
                   <h3>Leonardo da Vinci</h3>
                 </div>
+              </div>
+
+              <div class="box-container-4">
                 <div class="box">
                   <img src="images/img2.jpg" alt="">
                 </div>
@@ -480,13 +501,14 @@
 </script>
 
 <script>
-    function show(a) {
-        document.querySelector('.menu').value = a;
+    let dropdown1 = document.getElementById('dropdown-1');
+    dropdown1.onclick = function() {
+        dropdown1.classList.toggle('active');
     }
 
-    let dropdown = document.querySelector('.dropdown');
-    dropdown.onclick = function() {
-        dropdown.classList.toggle('active');
+    let dropdown2 = document.getElementById('dropdown-2');
+    dropdown2.onclick = function() {
+        dropdown2.classList.toggle('active');
     }
   </script>
   </body>
