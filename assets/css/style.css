@@ -50,6 +50,7 @@ html {
   opacity: 40%;
   color: var(--white);
   transition: 0.5s;
+  text-wrap: nowrap;
 }
 
 .btn--signup:hover {
@@ -99,6 +100,7 @@ header .logo .image {
 }
 
 header .logo .title {
+  text-wrap: nowrap;
   font-size: 2.4rem;
   font-weight: 600;
   letter-spacing: 2px;
@@ -1328,6 +1330,7 @@ header .logos #menu-btn{
   border-radius: 2rem;
   background: #d9d9d9;
   transition: 0.5s;
+  text-transform: none;
 }
 
 .form .container .box-email input:focus {
@@ -1354,6 +1357,7 @@ header .logos #menu-btn{
   padding: 1.8rem 2.5rem;
   border-radius: 2rem;
   background: #d9d9d9;
+  text-transform: none;
 }
 
 .form .container .box-pw input:focus {
@@ -1361,7 +1365,7 @@ header .logos #menu-btn{
   padding: 1.8rem 2rem;
 }
 
-.form .container .btn {
+.form .container .btn input {
   margin: 5rem 19rem;
   padding: 1.2rem 2rem;
   line-height: 1;
@@ -1370,15 +1374,15 @@ header .logos #menu-btn{
   transition: 0.5s;
 }
 
-.form .container .btn a {
+.form .container .btn input {
   font-size: 1.4rem;
   font-weight: 600;
   font-family: "Nunito", sans-serif;
+  cursor: pointer;
 }
 
-.form .container .btn:hover {
+.form .container .btn input:hover {
   letter-spacing: 0.2rem;
-  padding: 1.2rem 0.2rem;
   background-color: var(--main-color);
 }
 

@@ -16,8 +16,48 @@
 </head>
 <body>
 
-<!-- section background -->
+<?php
+    require_once 'connection.php';
 
+    $pwErr = $emailErr = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST['email'])) {
+            $emailErr = "Email is required";
+        } else {
+            $email = test_input($_POST['email']);
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "Invalid Email!";
+            }
+        }
+
+        if (empty($_POST['password'])) {
+            $pwErr = "Password is required";
+        } else {
+            $password = test_input($_POST['password']);
+        }
+            $sql = "SELECT * FROM account WHERE email='$email' AND password = '$password'";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                $row = mysqli_fetch_assoc($result);
+                $message = "Logged in";
+                setcookie("user_id", $row["id"], time()+(86400*30), "/");
+                header("Location:index.php?message=".$message);
+            } else {
+                $pwErr = "Password incorrect";
+                $emailErr = "Email doesn't exist or incorrect";
+            }
+    }
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+?>
+
+<!-- section background -->
 <section class="background">
 
     <div class="container">
@@ -93,12 +133,10 @@
     </div>
 
 </section>
-
 <!-- /section background -->
 
 <!-- section login form -->
-
-<section class="form">
+<form class="form" action="login.php" method="post">
 
     <div class="container">
 
@@ -107,17 +145,19 @@
         </div>
 
         <div class="box-email">
+            <span><?php echo $emailErr; ?></span>
             <label for="email">Email</label>
-            <input type="text" placeholder="Enter your Email address">
+            <input type="text" placeholder="Enter your Email address" name="email" id="email">
         </div>
 
         <div class="box-pw">
+            <span><?php echo $pwErr; ?></span>
             <label for="password">Password</label>
-            <input type="password" placeholder="Enter your Password">
+            <input type="password" placeholder="Enter your Password" name="password" id="password">
         </div>
 
         <div class="btn">
-            <a href="homepage_index.html">Login</a>
+            <input type="submit" value="Login" name="login" id="login">
         </div>
 
         <div class="link_fb">
@@ -157,9 +197,9 @@
 
     </div>
 
-</section>
-
+</form>
 <!-- /section login form -->
 
 </body>
 </html>
+
