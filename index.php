@@ -119,7 +119,7 @@
                 Voluptatum itaque fugiat aspernatur mollitia assumenda error
                 expedita eligendi dolorem, placeat facere, dolores necessitatibus
                 magni explicabo non nobis temporibus odit!</p>
-                <a href="raw_about.html" class="btn--explore">Explore</a>
+                <a href="explore.php" class="btn--explore">Explore</a>
               </div>
 
             </div>
@@ -138,7 +138,7 @@
                 tempore dolores alias! Deserunt magnam omnis est quos sed
                 facere placeat asperiores quia pariatur molestias necessitatibu
                 s cumque doloribus veritatis doloremque, ipsa quae.</p>
-                <a href="raw_explore.html" class="btn--explore">Explore</a>
+                <a href="explore.php" class="btn--explore">Explore</a>
               </div>
 
               <div class="image">
@@ -158,7 +158,7 @@
               <div class="content">
                 <h1>color</h1>
                 <h1>mix</h1>
-                <a href="raw_explore.html" class="btn--explore">Explore</a>
+                <a href="explore.php" class="btn--explore">Explore</a>
               </div>
 
             </div>
@@ -174,7 +174,7 @@
                 <img src="images/Shades Of Blue Color Palette Poster.jpg" alt="">
               </div>
               <div class="btn">
-                <a href="raw_explore.html" class="btn--explore">Explore</a>
+                <a href="explore.php" class="btn--explore">Explore</a>
               </div>
             </div>
           </div>
@@ -218,7 +218,7 @@
                 <div class="box text-1">
                   <h1>creatives</h1>
                   <p>in your own way</p>
-                  <a href="raw_explore.html" class="btn--explore">Explore</a>
+                  <a href="explore.php" class="btn--explore">Explore</a>
                 </div>
                 <div class="box">
                   <img src="images/Cheap DIY Artwork!.jpg" alt="">
@@ -255,7 +255,7 @@
                 <div class="box text-1">
                   <h1>creatives</h1>
                   <p>in your own way</p>
-                  <a href="raw_explore.html" class="btn--explore">Explore</a>
+                  <a href="explore.php" class="btn--explore">Explore</a>
                 </div>
               </div>
 

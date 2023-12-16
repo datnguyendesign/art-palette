@@ -437,7 +437,7 @@ header .logos #menu-btn{
 
 /* Page 3 */
 .color .container-2 {
-  max-width: 100vw;
+  max-width: 100%;
   height: 80rem;
   display: flex;
   justify-content: center;
@@ -1289,6 +1289,12 @@ header .logos #menu-btn{
   border-left: 1px solid #ccc;
 }
 
+.form span {
+  font-size: 1.2rem;
+  padding: 4px 12px;
+  color: red;
+}
+
 .form .container {
   position: relative;
   text-align: center;
@@ -1566,6 +1572,10 @@ header .logos #menu-btn{
   transition: 0.5s;
 }
 
+.form_sign-up .container .box input {
+  text-transform: none;
+}
+
 .form_sign-up .container .box-email {
   display: flex;
   flex-direction: column;
@@ -1690,20 +1700,21 @@ header .logos #menu-btn{
   color: var(--main-color);
 }
 
-.form_sign-up .container .box-btn {
+.form_sign-up .container .box-btn input{
   display: inline-flex;
   border: 1px solid black;
   padding: 1rem 2rem;
   border-radius: 2rem;
   transition: 0.2s;
+  background: transparent;
 }
 
-.form_sign-up .container .box-btn a {
+.form_sign-up .container .box-btn input {
   font-size: 1.6rem;
   font-weight: 600;
 }
 
-.form_sign-up .container .box-btn:hover {
+.form_sign-up .container .box-btn input:hover {
   cursor: pointer;
   background-color: var(--main-color);
   letter-spacing: 0.1rem;
@@ -1871,7 +1882,6 @@ header .logos #menu-btn{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 3rem;
   background: #f9f9f9;
   border-radius: 2rem;
 }
@@ -1913,6 +1923,7 @@ header .user .dropdown {
     width: 20rem;
     height: 5rem;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 20px;
 }
 
 header .user .dropdown::before {
@@ -2017,7 +2028,7 @@ header .user .dropdown .option div:hover {
 @media (max-width: 991px) {
 
   html {
-    font-size: 55%;
+    font-size: 50%;
   }
 
   header {
@@ -2030,7 +2041,7 @@ header .user .dropdown .option div:hover {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 
   :root {
     --swiper-navigation-size: 3rem !important;

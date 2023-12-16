@@ -20,14 +20,14 @@ if (!empty($_COOKIE['user_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/explore.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <!-- header -->
-    <header class="header">
-        <a href="index.php" class="logo">
+    <!-- Section header -->
+    <header class="header_explore">
+        <div class="logo">
             <div class="image">
                 <svg width="150.29002380371094" height="62.866700447571446" viewBox="0 0 366.2160313579785 64.8" class="css-1j8o68f">
                     <defs id="SvgjsDefs1569">
@@ -56,68 +56,101 @@ if (!empty($_COOKIE['user_id'])) {
                     </g>
                 </svg>
             </div>
+
             <div class="title">
-                Art palette
+                <a href="index.php">Art palette</a>
             </div>
-        </a>
+        </div>
 
-        <div class="logos">
-            <?php
-            if ($row < 0) {
-                echo '<a href="login.php" class="btn--login">Login</a>';
-                echo '<a href="signup.php" class="btn--signup">Sign up</a>';
-                echo '<div class="fas fa-bars" id="menu-btn"></div>';
-            } else {
-                echo '<div class="user">
-                    <div class="dropdown" id="dropdown-1">
-                      <div class="menu" id="popup-1">
-                        <img src="images/img22.jpg" alt="">
-                        <span>' . $username . '</span>
-                      </div>
-
-                      <div class="option">
-                        <div><a href="index.php">Home</a></div>
-                        <div><a href="profile.php">Profile</a></div>
-                        <div><a href="logout.php">Sign out</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="fas fa-bars" id="menu-btn"></div>';
-            }
-
-            ?>
+        <div class="search-space">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" name="search" placeholder="Search here...">
         </div>
 
         <div class="links">
-            <a href="about.php">About</a>
-            <a href="explore.php">Explore</a>
             <a href="feed.php">Feed</a>
+            <a href="about.php">About us</a>
             <a href="gallery.html">Gallery</a>
+        </div>
+
+        <div class="container">
+            <div class="notice">
+                <a href="#" class="bell"><i class="fas fa-bell"></i></a>
+                <div class="notification">
+
+                    <header class="noti__header">
+                        <h1>Notification</h1>
+                    </header>
+
+                    <ul class="noti__list">
+                        <li class="noti__list-item">
+                            <a href="#" class="noti__link message">
+                                <img src="images/user.png" alt="" class="noti__link-img">
+                                <div class="noti__link-content">
+                                    <h2>Message</h2>
+                                    <p>User has nickname <span>ngtiendat</span> just replied your comment.</p>
+                                </div>
+                                <div class="noti__link-type">
+                                    <i class="fa-solid fa-message"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="noti__list-item">
+                            <a href="#" class="noti__link reaction">
+                                <img src="images/user.png" alt="" class="noti__link-img">
+                                <div class="noti__link-content">
+                                    <h2>Reaction</h2>
+                                    <p>User has nickname <span>ngtiendat</span> just liked your post.</p>
+                                </div>
+                                <div class="noti__link-type">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="noti__list-item">
+                            <a href="#" class="noti__link download">
+                                <img src="images/user.png" alt="" class="noti__link-img">
+                                <div class="noti__link-content">
+                                    <h2>Download</h2>
+                                    <p>You have just downloaded the image from <span>abc</span>.</p>
+                                </div>
+                                <div class="noti__link-type">
+                                    <i class="fa-solid fa-download"></i>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
             <?php
-            if ($row < 0) {
-                echo '<a href="login.php" class="btn--login">Login</a>';
-                echo '<a href="signup.php" class="btn--signup">Sign up</a>';
-            } else {
+            if ($row > 0) {
                 echo '<div class="user">
-                            <div class="dropdown" id="dropdown-2">
-                                <div class="menu" id="popup-2">
-                                    <img src="images/img22.jpg" alt="">
-                                    <span>' . $username . '</span>
-                                </div>
-
-                                <div class="option">
-                                    <div><a href="index.php">Home</a></div>
-                                    <div><a href="profile.php">Profile</a></div>
-                                    <div><a href="logout.php">Sign out</a></div>
-                                </div>
+                        <div class="dropdown">
+                            <div class="menu">
+                                <img src="images/img22.jpg" alt="">
+                                <span>'.$username.'</span>
                             </div>
-                         </div>';
-            }
 
+                            <div class="option">
+                                <div><a href="index.php">Home</a></div>
+                                <div><a href="profile.php">Profile</a></div>
+                                <div><a href="logout.php">Sign out</a></div>
+                            </div>
+                        </div>
+                      </div>';
+            } else {
+                echo '<a href="login.php" class="btn--login">Login</a>
+                      <a href="signup.php" class="btn--signup">Sign up</a>';
+            }
             ?>
         </div>
+
     </header>
-    <!-- /header -->
+
+    <!-- /Section header -->
 </body>
 
 </html>

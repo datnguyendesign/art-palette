@@ -1,3 +1,62 @@
+<?php
+require_once 'connection.php';
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+$email = $password = $username = $birthday = "";
+$emailErr = $passwordErr = $usernameErr = $birthdayErr = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+    } else {
+        $email = test_input($_POST["email"]);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "invalid email format";
+        }
+    }
+
+    if (empty($_POST["password"])) {
+        $passwordErr = "Password is required";
+    } else {
+        $password = test_input($_POST["password"]);
+        if (strlen($password) < 6) {
+            $passwordErr = "Password length must greater than 6 character";
+        }
+    }
+
+    if (empty($_POST["username"])) {
+        $usernameErr = "Username is required";
+    } else {
+        $username = test_input(($_POST["username"]));
+        if (!preg_match("/^[a-zA-Z-' ]*$/", $username)) {
+            $nameErr = "Only letters and white space allowed";
+        }
+    }
+
+    if (empty($_POST["birthday"])) {
+        $birthdayErr = "Birthday field is empty";
+    } else {
+        $birthday = test_input($_POST["birthday"]);
+    }
+
+    $sql = "INSERT INTO account (email, username, password, birthday)
+            VALUES ('$email', '$username', '$password', '$birthday')";
+    if ($conn->query($sql)) {
+        $sub_sql = "SELECT * FROM account WHERE email = '$email'";
+        $result = $conn->query($sub_sql);
+        $row = $result->fetch_assoc();
+        setcookie("user_id", $row["id"], time()+(86400*30), "/");
+        header("Location: index.php");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +76,6 @@
 <body>
 
 <!-- section background sign up -->
-
 <section class="background_sign-up">
 
     <div class="container">
@@ -92,12 +150,11 @@
     </div>
 
 </section>
-
 <!-- /section background sign up -->
 
-<!-- section sign up form -->
 
-<section class="form_sign-up">
+<!-- section sign up form -->
+<form class="form_sign-up" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
     <div class="container">
 
@@ -105,27 +162,27 @@
             <h1>Art Palette</h1>
         </div>
 
-        <div class="box-email">
+        <div class="box box-email">
             <label for="email">Email</label>
-            <input type="text" name="email" placeholder="Email address">
+            <input type="text" name="email" id="email" placeholder="Email address">
         </div>
 
-        <div class="box-pw">
+        <div class="box box-pw">
             <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" id="password" placeholder="Password">
         </div>
 
-        <div class="box-name">
+        <div class="box box-name">
             <label for="name">Username</label>
-            <input type="text" name="name" id="name" placeholder="Username">
+            <input type="text" name="username" id="name" placeholder="Username">
         </div>
 
-        <div class="box-dob">
+        <div class="box box-dob">
             <label for="birthday">Date of birth</label>
-            <input type="date" name="birthday">
+            <input type="date" name="birthday" id="birthday">
         </div>
 
-        <div class="box-check">
+        <div class="box box-check">
             <div class="checkbox">
                 <input type="checkbox" id="cbx2" style="display: none;">
                 <label for="cbx2" class="check">
@@ -142,7 +199,7 @@
         </div>
 
         <div class="box-btn">
-            <a href="homepage_index.html">Sign up</a>
+            <input type="submit" value="Sign up" name="signup" id="signup">
         </div>
 
         <div class="box-others">
@@ -180,7 +237,7 @@
 
     </div>
 
-</section>
+</form>
 
 <!-- /section sign up form -->
 

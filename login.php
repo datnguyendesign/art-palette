@@ -1,3 +1,44 @@
+<?php
+    require_once 'connection.php';
+
+    $pwErr = $emailErr = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST['email'])) {
+            $emailErr = "Email is required";
+        } else {
+            $email = test_input($_POST['email']);
+            $emailErr = "";
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "Invalid Email!";
+            }
+        }
+
+        if (empty($_POST['password'])) {
+            $pwErr = "Password is required";
+        } else {
+            $password = test_input($_POST['password']);
+        }
+
+        @$sql = "SELECT * FROM account WHERE email='$email' AND password = '$password'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $row = mysqli_fetch_assoc($result);
+            $message = "Logged in";
+            setcookie("user_id", $row["id"], time()+(86400*30), "/");
+            header("Location:index.php?message=".$message);
+        }
+
+    }
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,47 +56,6 @@
     />
 </head>
 <body>
-
-<?php
-    require_once 'connection.php';
-
-    $pwErr = $emailErr = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST['email'])) {
-            $emailErr = "Email is required";
-        } else {
-            $email = test_input($_POST['email']);
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $emailErr = "Invalid Email!";
-            }
-        }
-
-        if (empty($_POST['password'])) {
-            $pwErr = "Password is required";
-        } else {
-            $password = test_input($_POST['password']);
-        }
-            $sql = "SELECT * FROM account WHERE email='$email' AND password = '$password'";
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                $row = mysqli_fetch_assoc($result);
-                $message = "Logged in";
-                setcookie("user_id", $row["id"], time()+(86400*30), "/");
-                header("Location:index.php?message=".$message);
-            } else {
-                $pwErr = "Password incorrect";
-                $emailErr = "Email doesn't exist or incorrect";
-            }
-    }
-
-    function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-?>
 
 <!-- section background -->
 <section class="background">
@@ -136,7 +136,7 @@
 <!-- /section background -->
 
 <!-- section login form -->
-<form class="form" action="login.php" method="post">
+<form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
     <div class="container">
 
@@ -145,15 +145,15 @@
         </div>
 
         <div class="box-email">
-            <span><?php echo $emailErr; ?></span>
             <label for="email">Email</label>
             <input type="text" placeholder="Enter your Email address" name="email" id="email">
+            <span><?php echo $emailErr; ?></span>
         </div>
 
         <div class="box-pw">
-            <span><?php echo $pwErr; ?></span>
             <label for="password">Password</label>
             <input type="password" placeholder="Enter your Password" name="password" id="password">
+            <span><?php echo $pwErr; ?></span>
         </div>
 
         <div class="btn">
@@ -181,7 +181,7 @@
 
         <div class="sign-up">
             <p>No account yet?</p>
-            <a href="signup.html">Sign up</a>
+            <a href="signup.php">Sign up</a>
         </div>
 
         <div class="footer">

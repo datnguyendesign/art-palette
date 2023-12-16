@@ -34,6 +34,51 @@ html.active {
     overflow: hidden;
 }
 
+.btn--login {
+    width: auto;
+    height: 5rem;
+    background: #684f43;
+    color: var(--white);
+    border-radius: 20rem;
+    opacity: 40%;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 0 2rem;
+    margin: 0 1rem;
+    list-style: none;
+  }
+
+  .btn--login:hover,
+  .btn--signup:hover {
+    letter-spacing: 0.3rem;
+    border-bottom: 1px solid var(--main-color);
+    opacity: 70%;
+    color: #000;
+  }
+
+  .btn--signup {
+    width: auto;
+    height: 5rem;
+    background: #c66828;
+    border-radius: 20rem;
+    opacity: 40%;
+    color: var(--white);
+    transition: 0.5s;
+    text-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 0 2rem;
+    margin: 0 1rem;
+    list-style: none;
+  }
+
 header
 {
     max-width: 100%;
@@ -92,6 +137,7 @@ header .links a
     margin: 0 1rem;
     list-style: none;
     transition: 0.5s;
+    text-wrap: nowrap;
 }
 
 header .links a:hover
@@ -99,18 +145,6 @@ header .links a:hover
     color: #C66828;
     letter-spacing: .3rem;
     border-bottom: 1px solid var(--main-color);
-}
-
-header .links a:hover.btn--login
-{
-    opacity: 70%;
-    color: #000;
-}
-
-header .links a:hover.btn--signup
-{
-    opacity: 70%;
-    color: #000;
 }
 
 .header_explore
@@ -180,6 +214,7 @@ header .user .dropdown {
     width: 20rem;
     height: 5rem;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 20px;
 }
 
 header .user .dropdown::before {
@@ -504,25 +539,6 @@ header .user .dropdown .option div:hover {
      grid-row: span 2;
  }
 
- .images .images__more {
-    text-align: center;
-    margin-top: 10rem;
-}
-
-.images .images__more a {
-    font-size: 2rem;
-    font-weight: 600;
-    padding: 1.5rem 3rem;
-    border: 2px solid var(--main-color);
-    border-radius: 1.5rem;
-    transition: .3s linear;
-}
-
-.images .images__more a:hover {
-    letter-spacing: .2rem;
-    background: rgba(211, 173, 127, .5);
-}
-
 .container__image#blur.active {
     filter: blur(20px);
     pointer-events: none;
@@ -596,6 +612,7 @@ header .user .dropdown .option div:hover {
     font-size: 2.2rem;
     text-transform: none;
     line-height: 1.7;
+    height: 30rem;
 }
 
 .images .container__popup .item-popup .content .interact {
@@ -668,6 +685,27 @@ header .user .dropdown .option div:hover {
 .images .container__popup .item-popup .close i {
     font-size: 3rem;
     cursor: pointer;
+}
+
+.images #images__more {
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.images #images__more button {
+    background: transparent;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1rem 3rem;
+    border: 2px solid var(--main-color);
+    border-radius: 1.5rem;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+.images #images__more button:hover {
+    letter-spacing: .1rem;
+    background: rgba(211, 173, 127, .5);
 }
 
 
@@ -780,37 +818,3 @@ header .user .dropdown .option div:hover {
 {
     color: var(--main-color);
 }
-
-
-
-
-
-
-
-.btn--login {
-    width: auto;
-    height: 5rem;
-    background: #684f43;
-    color: var(--white);
-    border-radius: 20rem;
-    opacity: 40%;
-    transition: 0.5s;
-  }
-
-  .btn--login:hover {
-    letter-spacing: 0.3rem;
-  }
-
-  .btn--signup {
-    width: auto;
-    height: 5rem;
-    background: #c66828;
-    border-radius: 20rem;
-    opacity: 40%;
-    color: var(--white);
-    transition: 0.5s;
-  }
-
-  .btn--signup:hover {
-    letter-spacing: 0.3rem;
-  }
