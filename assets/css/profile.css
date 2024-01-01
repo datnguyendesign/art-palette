@@ -132,78 +132,43 @@ html
 
 
 .profile .container__left .option {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    grid-auto-flow: dense;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin-top: 10rem;
     row-gap: 4rem;
 }
 
-.profile .container__left .option .option__post {
+.profile .container__left .option .option_item {
+    width: 200px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-}
-
-.profile .container__left .option .option__post a i{
-    font-size: 2.5rem;
-    color: #60605F;
-    transition: .2s linear;
-}
-
-.profile .container__left .option .option__post a i:hover {
-    color: #4b4b4b;
-    font-size: 2.7rem;
-}
-
-.profile .container__left .option .option__post p {
-    font-size: 2rem;
-}
-
-.profile .container__left .option .option__share {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start !important;
+    align-items: start;
     gap: 2rem;
+    padding-left: 2rem;
 }
 
-.profile .container__left .option .option__share a i {
+.profile .container__left .option .option_item a i{
     font-size: 2.5rem;
     color: #60605F;
-    transition: .2s linear;
+    transition: .1s linear;
 }
 
-.profile .container__left .option .option__share a i:hover {
+.profile .container__left .option .option_item a i:hover {
     color: #4b4b4b;
     font-size: 2.7rem;
 }
 
-.profile .container__left .option .option__share p {
+.profile .container__left .option .option_item p {
     font-size: 2rem;
+    margin: .1rem;
+    transition: .2s;
 }
 
-.profile .container__left .option .option__palette {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-
-.profile .container__left .option .option__palette a i {
-    font-size: 2.5rem;
-    color: #60605F;
-    transition: .2s linear;
-}
-
-.profile .container__left .option .option__palette a i:hover {
-    color: #4b4b4b;
-    font-size: 2.7rem;
-}
-
-.profile .container__left .option .option__palette p {
-    font-size: 2rem;
+.profile .container__left .option .option_item:hover p{
+    text-decoration: underline;
 }
 
 

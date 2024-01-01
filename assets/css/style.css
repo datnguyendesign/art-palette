@@ -437,7 +437,7 @@ header .logos #menu-btn{
 
 /* Page 3 */
 .color .container-2 {
-  max-width: 100%;
+  width: 100vw;
   height: 80rem;
   display: flex;
   justify-content: center;
@@ -479,6 +479,7 @@ header .logos #menu-btn{
 
 /* Page 4 */
 .color .container-3 {
+  width: 100vw;
   height: 80rem;
   display: flex;
   justify-content: center;
@@ -1008,6 +1009,20 @@ header .logos #menu-btn{
   stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
+}
+
+.swiper-pagination {
+  --swiper-pagination-color: var(--main-color);
+  --swiper-pagination-bullet-width: 12px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  --swiper-navigation-size: 20px;
+  --swiper-navigation-sides-offset: 20px;
+  --swiper-navigation-color: black;
+  padding: 30px 20px;
+  border-radius: 20px;
+  background: rgba(223, 214, 214, 0.5);
 }
 
 /* ====================== ABOUT US PAGE ============================= */
@@ -1846,7 +1861,6 @@ header .logos #menu-btn{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 1.5rem 2rem;
   background: #d9d9d9;
   border-radius: 2rem;
 }

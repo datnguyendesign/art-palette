@@ -29,6 +29,21 @@ CREATE TABLE `images` (
  PRIMARY KEY (`imageID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
+-- Insert data into Account table
+INSERT INTO account (email, username, password, birthday) VALUES ('admin@gmail.com', 'admin', '123', '2003-12-29');
+INSERT INTO account (email, username, password, birthday) VALUES
+('john.doe@example.com', 'john_doe', 'securepass123', '1990-05-15'),
+('jane.smith@example.com', 'jane_smith', 'myp@ssw0rd', '1985-09-20'),
+('mike.jones@example.com', 'mike_jones', 'strongP@ss', '1988-02-10'),
+('emily.white@example.com', 'emily_white', 'passw0rd!', '1992-07-05'),
+('alex.miller@example.com', 'alex_miller', 'secret123', '1995-12-25'),
+('lisa.green@example.com', 'lisa_green', 'letmein', '1983-04-30'),
+('brian.wilson@example.com', 'brian_wilson', 'brianspass', '1987-08-12'),
+('sara.jenkins@example.com', 'sara_jenkins', 'mysecurepass', '1994-11-18'),
+('david.brown@example.com', 'david_brown', 'davidpass', '1982-06-08'),
+('olivia.james@example.com', 'olivia_james', 'oliviasp@ss', '1998-03-10');
+
 -- Insert data into Categories table
 INSERT INTO categories (categoryName) VALUES ('Nature');
 INSERT INTO categories (categoryName) VALUES ('Artwork');

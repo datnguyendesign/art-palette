@@ -365,10 +365,10 @@
     spaceBetween: 30,
     centeredSlides: true,
     rewind: true,
-    // autoplay: {
-    //   delay: 5500,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 5500,
+      disableOnInteraction: false,
+    },
   });
 </script>
 

@@ -12,6 +12,14 @@ if (!empty($_COOKIE['user_id'])) {
 } else {
     $row = -1;
 }
+
+if (isset($_POST["submit"])) {
+    $search = $_POST["search"];
+
+    $sql_search = "SELECT * FROM images WHERE imageName LIKE '%$search%' OR imageDescription LIKE '%$search%'";
+    $search_result = $conn->query($sql_search);
+    $search_result_blur = $conn->query($sql_search);
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,10 +70,11 @@ if (!empty($_COOKIE['user_id'])) {
             </div>
         </div>
 
-        <div class="search-space">
+        <form class="search-space" method="post" action="search.php">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="search" name="search" placeholder="Search here...">
-        </div>
+            <button name="submit">Search</button>
+        </form>
 
         <div class="links">
             <a href="feed.php">Feed</a>
