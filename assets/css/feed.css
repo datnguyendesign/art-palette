@@ -250,7 +250,7 @@ header .logo .title
 }
 
 .upload-news.active {
-    top: 50%;
+    top: 55%;
     visibility: visible;
     opacity: 1;
     transition: .5s;

@@ -7,6 +7,9 @@ $data = $conn->query($sql);
 $sql_copy = "SELECT * FROM images LIMIT 20";
 $data_copy = $conn->query($sql_copy);
 
+$sql_category = "SELECT * FROM categories";
+$data_category = $conn->query($sql_category);
+
 ?>
 
 <!DOCTYPE html>
@@ -71,10 +74,9 @@ $data_copy = $conn->query($sql_copy);
               </div>
             </div>
             <div class="fields">
-              <a href="#" class="field__item">Photos</a>
-              <a href="#" class="field__item">Portrait</a>
-              <a href="#" class="field__item">Nature</a>
-              <a href="#" class="field__item">Artwork</a>
+              <?php while($row = mysqli_fetch_assoc($data_category)) { ?>
+                <a href="#" class="field__item"><?php echo $row["categoryName"]; ?></a>
+              <?php } ?>
             </div>
           </div>
           <div class="close">

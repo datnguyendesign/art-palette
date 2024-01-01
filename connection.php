@@ -1,10 +1,10 @@
 <?php
 
     $servername = "localhost";
-    $username = "";
+    $username = "root";
     $password = "";
     $dbname = "art_palette";
 
-    $conn = new mysqli($servername, $username, $password, $dbname, 3307);
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
 ?>
